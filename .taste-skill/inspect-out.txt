@@ -1,0 +1,35 @@
+TASTESKILL · INSPECT   http://localhost:3000/preview
+
+MEASURED (first viewport listed)
+  hero headline   "Selamat pagi, Andi."  3 words · 1 line(s) · 30px (2.1vw) · Instrument Serif 400 · tracking -0.02em · leading 1.15
+  @768px          1 line(s) · 26px
+  @390px          1 line(s) · 26px
+  typefaces       Instrument Sans 99%
+  sizes in use    11 / 12 / 13 / 14 / 15 / 16 / 20 / 22 / 24 / 30 / 32 px   body 14px / 1.63
+  colour          page #f2f2f7 · sections #ffffff · button #eceef2
+  page            5.2 screens · 642 words · 0 images · hero media none
+  headings        7 · longest 1 line(s) · median 1 words
+
+WARN — fix, or be able to defend
+  [contrast] @1440px (+768, 390)  Low-contrast text: "Mulai" 4:1 needs 4.5:1
+      → Darken or lighten the text colour.
+  [below-fold] @1440px  Only 9 of 23 blocks start on the first 1440px screen.
+      → Every block the brief names shows its header and first rows on the first desktop screen: size the headline block to its question, cap long lists with "View all", and put time-sensitive blocks before long tables.
+  [panel-void] @1440px  3 card(s) hold a blank band inside: 598px in "←", 159px in "z", 66px in "Air cepat".
+      → A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows.
+  [edge-text] @390px  1 text block(s) sit 12–15px from the phone's edge: "+500 ml" (14px)
+      → The page margin is 16–20px on a phone; the header and the corner labels sit on it too.
+
+LOOK AT THE RENDER — open these with your image viewer / Read tool before saying anything about quality:
+  desktop 1440px  .taste-skill/inspect/desktop-fold.jpg
+                  .taste-skill/inspect/desktop-page-01.jpg
+                  .taste-skill/inspect/desktop-page-02.jpg
+  tablet 768px    .taste-skill/inspect/tablet-fold.jpg
+                  .taste-skill/inspect/tablet-page-01.jpg
+                  .taste-skill/inspect/tablet-page-02.jpg
+  mobile 390px    .taste-skill/inspect/mobile-fold.jpg
+                  .taste-skill/inspect/mobile-page-01.jpg
+                  .taste-skill/inspect/mobile-page-02.jpg
+
+report: .taste-skill/inspect/report.json
+RESULT: 0 FAIL, 4 WARN — measurements pass. Passing the meter is the floor, not the grade: score the screenshots with references/critique.md.

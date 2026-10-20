@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+
+  // Profil & target kesehatan
+  heightCm    Float?
+  weightKg    Float?
+  age         Int?
+  gender      String?
+  stepGoal    Int       @default(8000)
+  waterGoalMl Int       @default(2000)
+  sleepGoalH  Float     @default(8)
+
+  logs DailyLog[]
+}
+
+model DailyLog {
+  id       String @id @default(cuid())
+  userId   String
+  date     String // YYYY-MM-DD (lokal)
+
+  steps        Int?
+  sleepHours   Float?
+  sleepQuality Int? // 1-5
+  waterMl      Int    @default(0)
+  weightKg     Float?
+  heartRate    Int?
+  systolic     Int?
+  diastolic    Int?
+  mood         Int? // 1-5
+  energy       Int? // 1-5
+  symptoms     String @default("[]") // JSON array of strings
+  note         String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+}
